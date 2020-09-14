@@ -11,4 +11,6 @@ RUN pip3 install -r /opt/app/requirements.txt
 COPY docker-entrypoint.sh /
 EXPOSE 5000
 ENTRYPOINT "/docker-entrypoint.sh"
-#ENTRYPOINT [ "python3", "main.py" ]a
+#ENTRYPOINT [ "python3", "main.py" ]
+
+
