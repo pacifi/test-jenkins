@@ -15,6 +15,13 @@ pipeline {
 
             }
         }
+         stage("build & SonarQube analysis") {
+          node {
+              withSonarQubeEnv('django') {
+                 sh 'mvn clean package sonar:sonar'
+              }
+          }
+        }
         stage('InstallRequirements') {
             steps {
             	sh '''
