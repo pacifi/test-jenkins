@@ -15,7 +15,6 @@ pipeline {
 
             }
         }
-       
         stage('InstallRequirements') {
             steps {
             	sh '''
@@ -44,5 +43,7 @@ pipeline {
                 '''
             }
         } 
+    
+  }
 }
 
