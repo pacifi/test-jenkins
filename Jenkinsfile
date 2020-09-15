@@ -16,7 +16,7 @@ pipeline {
             }
         }
           stage('SonarQube analysis') {
-    withSonarQubeEnv(credentialsId: 'f225455e-ea59-40fa-8af7-08176e86507a', installationName: 'django') { 
+    withSonarQubeEnv(credentialsId: '886994ee03d85506c1bac5f59e31541cf01cde5d', installationName: 'django') { 
       sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
     }
   }
