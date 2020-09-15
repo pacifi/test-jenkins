@@ -15,15 +15,7 @@ pipeline {
 
             }
         }
-        stages {
-          stage("build & SonarQube analysis") {
-            agent any
-            steps {
-              withSonarQubeEnv('django') {
-                sh 'mvn clean package sonar:sonar'
-              }
-            }
-          }
+       
         stage('InstallRequirements') {
             steps {
             	sh '''
@@ -52,15 +44,5 @@ pipeline {
                 '''
             }
         } 
-    stage('PushDockerImage') {
-            steps {
-            	sh '''
-            		docker tag apptest:latest nilss/apptest:latest
-					docker push nilss/apptest:latest
-					docker rmi apptest:latest
-                '''
-            }
-        } 
-  }
 }
 
