@@ -15,11 +15,11 @@ pipeline {
 
             }
         }
-          stage('SonarQube analysis') {
-    withSonarQubeEnv(credentialsId: '886994ee03d85506c1bac5f59e31541cf01cde5d', installationName: 'django') { 
-      sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
-    }
-  }
+        stage('SonarQube analysis 1') {
+            steps {
+                sh 'sonar-scanner -Dsonar.projectKey=django -Dsonar.sources=.  -Dsonar.host.url=http://sonar.innovandoperu.com  -Dsonar.login=4eda046c450e3ddd0dd63ae287027e76601d024f'
+            }
+        }
         stage('InstallRequirements') {
             steps {
             	sh '''
@@ -51,4 +51,7 @@ pipeline {
     
   }
 }
+
+
+
 
