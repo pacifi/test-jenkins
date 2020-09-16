@@ -20,7 +20,7 @@ pipeline {
                        script {
                           def scannerHome = tool 'sonar-scanner';
                           
-                          sh "${tool("fosslinxsonar")}/bin/sonar-scanner"
+                          sh "${tool("sonar-scanner")}/bin/sonar-scanner"
                                        }
                           
                            }
