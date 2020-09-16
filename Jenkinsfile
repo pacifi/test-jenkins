@@ -19,10 +19,10 @@ pipeline {
                    steps {
                        script {
                           def scannerHome = tool 'sonar-scanner';
-                          withSonarQubeEnv("fosslinxSonarqubeserver") {
+                          
                           sh "${tool("fosslinxsonar")}/bin/sonar-scanner"
                                        }
-                               }
+                          
                            }
                         }
         stage('InstallRequirements') {
