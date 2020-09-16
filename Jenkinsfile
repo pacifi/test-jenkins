@@ -20,7 +20,7 @@ pipeline {
                        script {
                           def scannerHome = tool 'sonar-scanner';
                           withSonarQubeEnv("fosslinxSonarqubeserver") {
-                          sh "${tool("sonar-scanner")}/bin/sonar-scanner -Dsonar.projectKey=django -Dsonar.sources=.  -Dsonar.host.url=http://sonar.innovandoperu.com  -Dsonar.login=4eda046c450e3ddd0dd63ae287027e76601d024f"
+                          sh "${tool("fosslinxsonar")}/bin/sonar-scanner"
                                        }
                                }
                            }
