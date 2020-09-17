@@ -10,7 +10,7 @@ pipeline {
           stage('Code Quality') {
                    steps {
                    sh '''
-                    docker run --rm -v "$(pwd):/usr/src" sonarsource/sonar-scanner-cli -Dsonar.login=a41c74a59554a688706a9f12c33139a70e162175 -Dsonar.host.url=http://192.168.1.102:9000    -Dsonar.projectKey=django -Dsonar.sources=/usr/src
+                    docker run --rm -v "$(pwd):/usr/src" sonarsource/sonar-scanner-cli -Dsonar.login=3237abe99eb459683c809a027366e21368584770 -Dsonar.host.url=http://192.168.1.102:9000    -Dsonar.projectKey=django2 -Dsonar.sources=/usr/src
                    '''
                    }
                    }
